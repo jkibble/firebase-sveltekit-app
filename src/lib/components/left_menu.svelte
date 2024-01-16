@@ -42,13 +42,12 @@
   $: currentRoute = $page.route.id;
 </script>
 
-<nav class=" bg-slate-400 h-[100svh]" aria-label="Sidebar">
+<nav class=" h-[100svh] bg-slate-400" aria-label="Sidebar">
   <ul role="list" class="grid gap-2 pt-4 text-lg font-bold text-white">
     {#each routes as route, index}
       <li
         class:active={currentRoute === route.id}
-        class="after:bg-slate-400 before:bg-slate-400 ml-4
-        rounded-[100vw_0_0_100vw] relative"
+        class="relative ml-4 rounded-[100vw_0_0_100vw] before:bg-slate-400 after:bg-slate-400"
       >
         <a href={route.id}>{route.name}</a>
       </li>
