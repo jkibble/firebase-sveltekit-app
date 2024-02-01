@@ -1,6 +1,8 @@
 <script lang="ts">
   import "../global.css";
   import LeftMenu from "$lib/components/left_menu.svelte";
+
+  import { auth } from "$lib/firebase";
 </script>
 
 <div class="grid gap-8 bg-[#1f2937] text-white">

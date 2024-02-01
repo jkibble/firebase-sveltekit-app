@@ -1,33 +1,7 @@
 <script lang="ts">
   import { onNavigate } from "$app/navigation";
   import { page } from "$app/stores";
-
-  const routes = [
-    {
-      id: "/",
-      name: "Home",
-    },
-    {
-      id: "/about",
-      name: "About",
-    },
-    {
-      id: "/projects",
-      name: "Projects",
-    },
-    {
-      id: "/calendar",
-      name: "Calendar",
-    },
-    {
-      id: "/documents",
-      name: "Documents",
-    },
-    {
-      id: "/reports",
-      name: "Reports",
-    },
-  ];
+  import { routes } from "$lib/routes";
 
   onNavigate(() => {
     if (!document.startViewTransition) return;
@@ -42,7 +16,7 @@
   $: currentRoute = $page.route.id;
 </script>
 
-<nav class=" h-[100svh] bg-slate-400" aria-label="Sidebar">
+<nav class=" h-screen bg-slate-400" aria-label="Sidebar">
   <ul role="list" class="grid gap-2 pt-4 text-lg font-bold text-white">
     {#each routes as route, index}
       <li
