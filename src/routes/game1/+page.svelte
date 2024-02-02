@@ -121,7 +121,7 @@
   };
 </script>
 
-<h3>Tic Tac Toe</h3>
+<h3>Tic Tac Toe (currently broken)</h3>
 
 <section class="board">
   <h4>Who's Turn: {whosTurn}</h4>
@@ -159,27 +159,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  table {
-    border-collapse: collapse;
-    border: 1px solid white;
-  }
-
-  td {
-    width: 100px;
-    height: 100px;
-    border: 1px solid white;
-    text-align: center;
-    font-size: 50px;
-  }
-
-  td > button {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: inherit;
   }
 </style>

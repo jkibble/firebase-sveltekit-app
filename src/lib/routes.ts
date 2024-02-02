@@ -27,12 +27,4 @@ export const routes = [
     id: "/game4",
     name: "Game 4",
   },
-  {
-    id: "/game5",
-    name: "Game 5",
-  },
-  {
-    id: "/game6",
-    name: "Game 6",
-  },
 ];
