@@ -7,7 +7,7 @@
     const randomWords = faker.helpers.arrayElements(wordList, 2500);
     const possibleWords = randomWords.filter((word) => word.length >= 4);
     const validLetters = extractValidLetters(possibleWords);
-    const centerLetter = validLetters[0];
+    const centerLetter = validLetters[4];
 
     const validWords = possibleWords.filter((word) =>
       isValidWord(word, centerLetter, [...validLetters, centerLetter]),
@@ -15,7 +15,7 @@
 
     return {
       centerLetter,
-      validLetters: validLetters.slice(1),
+      validLetters: validLetters,
       validWords,
     };
   };
@@ -37,7 +37,7 @@
     }, {});
 
     const sortedLetters = Object.entries(letterCounts).sort((a, b) => b[1] - a[1]);
-    return sortedLetters.map(([letter]) => letter).slice(0, 7);
+    return sortedLetters.map(([letter]) => letter).slice(0, 9);
   };
 
   const date = new Date();
@@ -75,27 +75,17 @@
   </div>
 </div>
 
-<div class="flex gap-3 text-3xl">
-  <div>
-    <button
-      on:click={() => addLetter(results.centerLetter)}
-      class="letter aspect-square w-16 bg-orange-400 shadow"
-    >
-      {results.centerLetter}
-    </button>
-  </div>
-  {#each results.validLetters as letter}
-    <div>
-      <button on:click={() => addLetter(letter)} class="letter aspect-square w-16 shadow">
+<div class="text-3xl">
+  <form class="grid grid-cols-3 gap-3 pb-3">
+    {#each results.validLetters as letter}
+      <button
+        on:click={() => addLetter(letter)}
+        class="letter aspect-square w-16 shadow"
+        class:bg-yellow-500={letter === results.centerLetter}
+      >
         {letter}
       </button>
-    </div>
-  {/each}
+    {/each}
+  </form>
   <button on:click={testWord}>Enter</button>
 </div>
-
-<style>
-  .letter {
-    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-  }
-</style>

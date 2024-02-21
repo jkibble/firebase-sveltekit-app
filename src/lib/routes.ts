@@ -8,23 +8,31 @@ if (browser) {
 
 export const routes = [
   {
-    id: "/",
-    name: "Home",
-  },
-  {
-    id: "/game1",
+    path: "/",
     name: "Game 1",
   },
   {
-    id: "/game2",
+    path: "/game2",
     name: "Game 2",
   },
   {
-    id: "/game3",
+    path: "/game3",
     name: "Game 3",
   },
   {
-    id: "/game4",
+    path: "/game4",
     name: "Game 4",
+  },
+  {
+    path: "/game5",
+    name: "Game 5",
+  },
+  {
+    path: "/game6",
+    name: "Game 6",
+  },
+  {
+    path: "/colours",
+    name: "Colour Picker",
   },
 ];
